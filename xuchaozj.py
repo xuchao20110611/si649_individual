@@ -9,10 +9,10 @@ import numpy as np
 import altair as alt
 from vega_datasets import data
 
-st.set_page_config(
-    page_title="xuchaozj SI649 Individual Project"
-
-)
+# st.set_page_config(
+#     page_title="xuchaozj SI649 Individual Project"
+#
+# )
 
 df_public=pd.read_csv('NCES_public_clean.csv')
 df_private=pd.read_csv('NCES_private_clean.csv')
@@ -329,8 +329,7 @@ public2=alt.Chart(df_public2).mark_point().transform_calculate(
     tooltip=['School Name','whitepercent:Q','city','issegregate:N',alt.Tooltip('segregatepoint:Q',title='The absolute value of difference between white percent and 0.5 ')]
 ).project(
     type='albersUsa',
-    scale=22000,
-    translate=[-6300,1800]
+    scale=22000
 ).properties(
     width=700,
     height=500
